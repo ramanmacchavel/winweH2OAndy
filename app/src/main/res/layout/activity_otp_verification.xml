@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".OtpVerification">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,27 +17,27 @@
         android:gravity="center">
 
         <EditText
-            android:id="@+id/txt_MobileNumber"
-            android:layout_width="300dp"
+            android:id="@+id/txt_Otp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="Enter Mobile Number(10)"
+            android:hint="Enter your OTP"
             android:textSize="22sp"
-            android:maxLength="10"
+            android:maxLength="4"
             android:inputType="number"/>
 
         <Button
-            android:id="@+id/btn_Login"
-            android:layout_width="300dp"
+            android:id="@+id/btn_OtpVerify"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#9400D3"
             android:textColor="@android:color/white"
             android:gravity="center"
             android:orientation="vertical"
-            android:text="Login" />
+            android:text="Verify" />
 
         <TextView
-            android:id="@+id/err_Label"
+            android:id="@+id/otp_err_Label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

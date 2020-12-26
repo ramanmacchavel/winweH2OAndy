@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Registration">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,16 +17,40 @@
         android:gravity="center">
 
         <EditText
-            android:id="@+id/txt_MobileNumber"
+            android:id="@+id/txt_Name"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:hint="Enter Mobile Number(10)"
+            android:hint="Name"
             android:textSize="22sp"
-            android:maxLength="10"
+            android:maxLength="20"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/txt_Street_plot"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Street/plot"
+            android:textSize="22sp"
+            android:maxLength="25"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/txt_Area"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Area Details"
+            android:textSize="22sp"
+            android:maxLength="25"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/txt_Pin"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="PIN"
+            android:textSize="22sp"
+            android:maxLength="6"
             android:inputType="number"/>
 
         <Button
-            android:id="@+id/btn_Login"
+            android:id="@+id/btn_Register"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -34,7 +58,7 @@
             android:textColor="@android:color/white"
             android:gravity="center"
             android:orientation="vertical"
-            android:text="Login" />
+            android:text="Register" />
 
         <TextView
             android:id="@+id/err_Label"
