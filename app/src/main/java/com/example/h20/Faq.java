@@ -10,11 +10,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Home extends AppCompatActivity {
+public class Faq extends AppCompatActivity {
+
     //Declaration
     NavigationView nav;
     ActionBarDrawerToggle toggle;
@@ -23,7 +23,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_faq);
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -40,8 +40,8 @@ public class Home extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.menu_home :
-                         //Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_LONG).show();
-                        recreate();
+                        //Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_LONG).show();
+                       openhome();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
@@ -71,7 +71,7 @@ public class Home extends AppCompatActivity {
 
                     case R.id.menu_faq :
                         //Toast.makeText(getApplicationContext(),"faq",Toast.LENGTH_LONG).show();
-                        openfaq();
+                       recreate();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }
@@ -81,6 +81,14 @@ public class Home extends AppCompatActivity {
         });
 
 
+    }
+    public void openhome(){
+        try{
+            Intent homeintent = new Intent(this, Home.class);
+            startActivity(homeintent);
+        }catch (Exception e){
+
+        }
     }
 
     public void openmyaccount() {

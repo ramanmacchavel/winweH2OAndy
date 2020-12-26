@@ -19,7 +19,7 @@
 
   <item android:id="@+id/menu_customerservice"
       android:icon="@drawable/ic_baseline_supervised_user_circle_24"
-      android:title="My Customer Service"/>
+      android:title="Customer Service"/>
 
   <item android:id="@+id/menu_faq"
       android:icon="@drawable/ic_baseline_feedback_24"

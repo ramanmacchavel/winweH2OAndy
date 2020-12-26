@@ -14,16 +14,16 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Home extends AppCompatActivity {
+public class MyAccount extends AppCompatActivity {
+
     //Declaration
     NavigationView nav;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_my_account);
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -40,14 +40,14 @@ public class Home extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.menu_home :
-                         //Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_LONG).show();
-                        recreate();
+                       // Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_LONG).show();
+                        openhome();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.menu_myaccount :
-                        // Toast.makeText(getApplicationContext(),"My Account", Toast.LENGTH_LONG).show();
-                        openmyaccount();
+                        //Toast.makeText(getApplicationContext(),"My Account", Toast.LENGTH_LONG).show();
+                        recreate();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
@@ -58,13 +58,13 @@ public class Home extends AppCompatActivity {
                         break;
 
                     case R.id.menu_myorder :
-                        // Toast.makeText(getApplicationContext(),"my order",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),"my order",Toast.LENGTH_LONG).show();
                         openmyorder();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.menu_customerservice :
-                        // Toast.makeText(getApplicationContext(),"customer service",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),"customer service",Toast.LENGTH_LONG).show();
                         opencustomerservice();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -79,39 +79,36 @@ public class Home extends AppCompatActivity {
                 return true;
             }
         });
-
-
     }
-
-    public void openmyaccount() {
+    public void openhome(){
         try{
-            Intent myaccountintent = new Intent(this, MyAccount.class);
-            startActivity(myaccountintent);
-        }catch (Exception e){
+            Intent homeintent =  new Intent(this, Home.class);
+             startActivity(homeintent);
+        }catch(Exception e){
 
         }
     }
-    public void openmycart() {
+    public void openmycart(){
         try {
-            Intent mycartintent = new Intent(this, MyCart.class);
-            startActivity(mycartintent);
+            Intent cartintent = new Intent(this, MyCart.class);
+            startActivity(cartintent);
         }catch (Exception e){
 
         }
     }
     public void openmyorder(){
         try{
-            Intent myorderintent = new Intent(this, MyOrder.class);
-            startActivity(myorderintent);
-        }catch (Exception e){
+            Intent orderintent = new Intent(this, MyOrder.class);
+            startActivity(orderintent);
+        }catch(Exception e){
 
         }
     }
     public void opencustomerservice(){
         try{
-            Intent customercareintent = new Intent(this, CustomerCare.class);
-            startActivity(customercareintent);
-        }catch (Exception e){
+            Intent customnerintent = new Intent(this, CustomerCare.class);
+            startActivity(customnerintent);
+        }catch(Exception e){
 
         }
     }
@@ -119,9 +116,8 @@ public class Home extends AppCompatActivity {
         try{
             Intent faqintent = new Intent(this, Faq.class);
             startActivity(faqintent);
-        }catch(Exception e){
+        }catch (Exception e){
 
         }
     }
-
 }

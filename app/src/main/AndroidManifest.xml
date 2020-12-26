@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Registration"></activity>
+        <activity android:name=".Faq"></activity>
+        <activity android:name=".CustomerCare" />
+        <activity android:name=".MyOrder" />
+        <activity android:name=".MyCart" />
+        <activity android:name=".MyAccount" />
+        <activity android:name=".Registration" />
         <activity android:name=".OtpVerification" />
         <activity
             android:name=".ui.login.OtpActivity"

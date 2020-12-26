@@ -10,11 +10,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Home extends AppCompatActivity {
+public class MyCart extends AppCompatActivity {
+
     //Declaration
     NavigationView nav;
     ActionBarDrawerToggle toggle;
@@ -23,53 +23,51 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_my_cart);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        nav=(NavigationView)findViewById(R.id.navmenu);
-        drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
+        nav = (NavigationView) findViewById(R.id.navmenu);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
 
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.Open, R.string.Close );
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.Open, R.string.Close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
-            {
-                switch (menuItem.getItemId())
-                {
-                    case R.id.menu_home :
-                         //Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_LONG).show();
-                        recreate();
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.menu_home:
+                        //Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_LONG).show();
+                        openhome();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.menu_myaccount :
+                    case R.id.menu_myaccount:
                         // Toast.makeText(getApplicationContext(),"My Account", Toast.LENGTH_LONG).show();
                         openmyaccount();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.menu_mycart :
+                    case R.id.menu_mycart:
                         //Toast.makeText(getApplicationContext(),"mycart  Open",Toast.LENGTH_LONG).show();
-                        openmycart();
+                        recreate();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.menu_myorder :
+                    case R.id.menu_myorder:
                         // Toast.makeText(getApplicationContext(),"my order",Toast.LENGTH_LONG).show();
                         openmyorder();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.menu_customerservice :
+                    case R.id.menu_customerservice:
                         // Toast.makeText(getApplicationContext(),"customer service",Toast.LENGTH_LONG).show();
                         opencustomerservice();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.menu_faq :
+                    case R.id.menu_faq:
                         //Toast.makeText(getApplicationContext(),"faq",Toast.LENGTH_LONG).show();
                         openfaq();
                         drawerLayout.closeDrawer(GravityCompat.START);
@@ -83,45 +81,48 @@ public class Home extends AppCompatActivity {
 
     }
 
+    public void openhome() {
+        try{
+            Intent homeintent = new Intent(this, Home.class);
+            startActivity(homeintent);
+        }catch (Exception e){
+
+        }
+    }
+
     public void openmyaccount() {
-        try{
-            Intent myaccountintent = new Intent(this, MyAccount.class);
-            startActivity(myaccountintent);
-        }catch (Exception e){
-
-        }
-    }
-    public void openmycart() {
         try {
-            Intent mycartintent = new Intent(this, MyCart.class);
-            startActivity(mycartintent);
+            Intent accountintent = new Intent(this, MyAccount.class);
+            startActivity(accountintent);
         }catch (Exception e){
 
         }
     }
-    public void openmyorder(){
+
+    public void openmyorder() {
         try{
-            Intent myorderintent = new Intent(this, MyOrder.class);
-            startActivity(myorderintent);
+            Intent orderintent = new Intent(this, MyOrder.class);
+            startActivity(orderintent);
         }catch (Exception e){
 
         }
     }
-    public void opencustomerservice(){
+
+    public void opencustomerservice() {
         try{
-            Intent customercareintent = new Intent(this, CustomerCare.class);
-            startActivity(customercareintent);
+            Intent customerintent = new Intent(this, CustomerCare.class);
+            startActivity(customerintent);
         }catch (Exception e){
 
         }
     }
-    public void openfaq(){
+
+    public void openfaq() {
         try{
             Intent faqintent = new Intent(this, Faq.class);
             startActivity(faqintent);
-        }catch(Exception e){
+        }catch (Exception e){
 
         }
     }
-
 }
