@@ -6,19 +6,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Home extends AppCompatActivity {
     //Declaration
     NavigationView nav;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +40,15 @@ public class Home extends AppCompatActivity {
 
         nav=(NavigationView)findViewById(R.id.navmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
-
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.Open, R.string.Close );
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
             {
+               // getMenuInflater().inflate(R.menu.iconmenu, (Menu) menuItem);
                 switch (menuItem.getItemId())
                 {
                     case R.id.menu_home :
@@ -74,21 +86,21 @@ public class Home extends AppCompatActivity {
                         openfaq();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
-                }
 
+
+                }
                 return true;
             }
         });
-
-
     }
+
+
 
     public void openmyaccount() {
         try{
             Intent myaccountintent = new Intent(this, MyAccount.class);
             startActivity(myaccountintent);
         }catch (Exception e){
-
         }
     }
     public void openmycart() {
@@ -96,7 +108,6 @@ public class Home extends AppCompatActivity {
             Intent mycartintent = new Intent(this, MyCart.class);
             startActivity(mycartintent);
         }catch (Exception e){
-
         }
     }
     public void openmyorder(){
@@ -104,7 +115,6 @@ public class Home extends AppCompatActivity {
             Intent myorderintent = new Intent(this, MyOrder.class);
             startActivity(myorderintent);
         }catch (Exception e){
-
         }
     }
     public void opencustomerservice(){
@@ -112,7 +122,6 @@ public class Home extends AppCompatActivity {
             Intent customercareintent = new Intent(this, CustomerCare.class);
             startActivity(customercareintent);
         }catch (Exception e){
-
         }
     }
     public void openfaq(){
@@ -120,8 +129,8 @@ public class Home extends AppCompatActivity {
             Intent faqintent = new Intent(this, Faq.class);
             startActivity(faqintent);
         }catch(Exception e){
-
         }
     }
+
 
 }

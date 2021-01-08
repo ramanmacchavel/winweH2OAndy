@@ -19,6 +19,7 @@
             android:background="#9400D3"
             app:title="Product List"
             app:titleTextColor="@android:color/white" />
+
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -28,6 +29,8 @@
         app:menu="@menu/iconmenu"
         app:headerLayout="@layout/navheader"
         android:layout_gravity="start"/>
+
+
 
 
 

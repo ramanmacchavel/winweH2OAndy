@@ -30,7 +30,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="#9400D3"
+            android:background="@drawable/btn_style"
             android:textColor="@android:color/white"
             android:gravity="center"
             android:orientation="vertical"
