@@ -9,7 +9,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +31,9 @@ public class Home extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
 
+    RecyclerView recyclerView;
+    List<Hero> hero;
+    Adapter adapter;
 
 
     @Override
@@ -37,12 +42,15 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        //for recycler view
+        recyclerView = findViewById(R.id.movielist);
+        //for nav
         nav=(NavigationView)findViewById(R.id.navmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.Open, R.string.Close );
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        callmovie();
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -87,14 +95,24 @@ public class Home extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
+                    case R.id.menu_logout :
+                        //Toast.makeText(getApplicationContext(),"faq",Toast.LENGTH_LONG).show();
+                        logoutapp();
+                        //drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
 
                 }
                 return true;
             }
         });
     }
+    @Override
+    protected void onResume() {
 
-
+        super.onResume();
+        callmovie();
+    }
 
     public void openmyaccount() {
         try{
@@ -131,6 +149,41 @@ public class Home extends AppCompatActivity {
         }catch(Exception e){
         }
     }
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
+    }
+    private void callmovie() {
+        if(!isNetworkConnected()) {
+            Toast.makeText(Home.this, "No Internet", Toast.LENGTH_SHORT).show();
+        }else{
+            Call<List<Hero>> call = RetrofitClass.getInstance().getMyApi().gethero();
+            call.enqueue(new Callback<List<Hero>>() {
+                @Override
+                public void onResponse(Call<List<Hero>> call, Response<List<Hero>> response) {
+                    List<Hero> heroList = response.body();
+                    recyclerView.setLayoutManager(new LinearLayoutManager(Home.this));
+                    adapter = new Adapter(Home.this, heroList);
+                    recyclerView.setAdapter(adapter);
+                }
 
+                @Override
+                public void onFailure(Call<List<Hero>> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
+    }
+    public void logoutapp(){
+
+        SessionManagement sessionManagement = new SessionManagement(Home.this);
+        sessionManagement.removeSession();
+        openMain();
+    }
+    public void openMain(){
+        Intent openamainintent = new Intent(Home.this, MainActivity.class);
+        openamainintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(openamainintent);
+    }
 }

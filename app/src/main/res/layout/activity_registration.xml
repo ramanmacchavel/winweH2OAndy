@@ -9,45 +9,79 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp">
 
         <EditText
             android:id="@+id/txt_Name"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Name"
-            android:textSize="22sp"
+            android:inputType="text"
             android:maxLength="20"
-            android:inputType="text"/>
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/err_Label_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FF0000"
+            android:textSize="10sp" />
+
         <EditText
             android:id="@+id/txt_Street_plot"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Street/plot"
-            android:textSize="22sp"
+            android:inputType="text"
             android:maxLength="25"
-            android:inputType="text"/>
+            android:textSize="22sp" />
+        <TextView
+            android:id="@+id/err_Label_plot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FF0000"
+            android:textSize="10sp" />
+
         <EditText
             android:id="@+id/txt_Area"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Area Details"
-            android:textSize="22sp"
+            android:inputType="text"
             android:maxLength="25"
-            android:inputType="text"/>
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/err_Label_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FF0000"
+            android:textSize="10sp" />
+
         <EditText
             android:id="@+id/txt_Pin"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="PIN"
-            android:textSize="22sp"
+            android:inputType="number"
             android:maxLength="6"
-            android:inputType="number"/>
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/err_Label_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FF0000"
+            android:textSize="10sp" />
 
         <Button
             android:id="@+id/btn_Register"
@@ -55,19 +89,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_style"
-            android:textColor="@android:color/white"
             android:gravity="center"
             android:orientation="vertical"
-            android:text="Register" />
-
-        <TextView
-            android:id="@+id/err_Label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="#FF0000"/>
+            android:text="Register"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 </LinearLayout>

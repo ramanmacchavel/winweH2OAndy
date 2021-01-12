@@ -16,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#9400D3"
+            android:background="#37c6ff"
             app:title="My Account"
             app:titleTextColor="@android:color/white" />
     </RelativeLayout>

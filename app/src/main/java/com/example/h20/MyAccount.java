@@ -74,6 +74,12 @@ public class MyAccount extends AppCompatActivity {
                         openfaq();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
+
+                    case R.id.menu_logout :
+                        //Toast.makeText(getApplicationContext(),"faq",Toast.LENGTH_LONG).show();
+                        logoutapp();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
                 }
 
                 return true;
@@ -119,5 +125,16 @@ public class MyAccount extends AppCompatActivity {
         }catch (Exception e){
 
         }
+    }
+    public void logoutapp(){
+
+        SessionManagement sessionManagement = new SessionManagement(MyAccount.this);
+        sessionManagement.removeSession();
+        openMain();
+    }
+    public void openMain(){
+        Intent openamainintent = new Intent(MyAccount.this, MainActivity.class);
+        openamainintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(openamainintent);
     }
 }

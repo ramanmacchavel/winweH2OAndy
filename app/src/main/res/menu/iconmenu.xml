@@ -27,6 +27,11 @@
       android:icon="@drawable/ic_baseline_feedback_24"
       android:title="FAQ's"/>
 
+  <item android:id="@+id/menu_logout"
+      android:icon="@drawable/ic_baseline_feedback_24"
+      android:title="Logout"/>
+
+
 </menu>
 
 

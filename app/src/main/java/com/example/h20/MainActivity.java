@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     //declaration here
     TextView Mobile_Number, Err_Label;
     Button Login;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
                 homeActivity();
             }
         });
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        checkSession();
     }
 
     public void homeActivity() {
@@ -44,12 +48,32 @@ public class MainActivity extends AppCompatActivity {
                 else if (MobileNumber.length() < 10){
                 Err_Label.setText("Enter a Valid Mobile Number");
             } else {
-                    Intent openhome = new Intent(this, OtpVerification.class);
-                    startActivity(openhome);
+               Intent openOtp = new Intent(this, OtpVerification.class);
+               startActivity(openOtp);
                 }
         }
         catch (NullPointerException e){
 
         }
+    }
+    private void checkSession(){
+        //check if user is logged in
+        //if user is logged in --> move to mainActivity
+
+        SessionManagement sessionManagement = new SessionManagement(MainActivity.this);
+        int userID = sessionManagement.getSession();
+
+        if(userID != -1){
+            //user id logged in and so move to mainActivity
+            openHomeActivity();
+        }
+        else{
+            //do nothing
+        }
+    }
+    public void openHomeActivity(){
+        Intent intent = new Intent(MainActivity.this, Home.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
