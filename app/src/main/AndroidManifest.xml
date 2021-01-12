@@ -18,9 +18,6 @@
         <activity android:name=".MyAccount" />
         <activity android:name=".Registration" />
         <activity android:name=".OtpVerification" />
-        <activity
-            android:name=".ui.login.OtpActivity"
-            android:label="@string/title_activity_otp" />
         <activity android:name=".Home" />
         <activity android:name=".MainActivity">
             <intent-filter>

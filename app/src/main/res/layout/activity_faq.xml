@@ -27,7 +27,8 @@
         android:id="@+id/navmenu"
         app:menu="@menu/iconmenu"
         app:headerLayout="@layout/navheader"
-        android:layout_gravity="start"/>
+        android:layout_gravity="start"
+        android:theme="@style/AppTheme"/>
 
 
 

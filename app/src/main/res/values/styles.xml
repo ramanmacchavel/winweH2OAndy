@@ -3,7 +3,17 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-
+        <!--for toolbar icon-->
+        <item name="colorControlNormal">@color/white</item>
+        <!--for menu icon and text-->
+      <item name="android:colorForeground">@color/black</item>
+        <!--for image viewcolor-->
+       <item name="tint">@color/skyblue</item>
     </style>
+
+    <style name="MyAppTheme" parent="AppTheme">
+        <item name="android:tint">@color/white</item>
+    </style>
+
 
 </resources>
