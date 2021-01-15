@@ -11,4 +11,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="mobilenmubererror">Enter Valid Mobile Number</string>
+    <string name="MobileNumberError">Enter Valid Mobile Number</string>
+    <string name="NameError">Enter Your Name</string>
+    <string name="PinError">Enter Valid Pin</string>
+    <string name="PlotError">Enter Plot/Street</string>
+    <string name="AreaError">Enter Your Area</string>
 </resources>

@@ -4,95 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registration">
+    tools:context=".Registration"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="20dp">
-
-        <EditText
-            android:id="@+id/txt_Name"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="Name"
-            android:inputType="text"
-            android:maxLength="20"
-            android:textSize="22sp" />
-
-        <TextView
-            android:id="@+id/err_Label_name"
+        <LinearLayout
+            android:id="@+id/linlay_inputs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:alpha="1"
+            android:layout_marginLeft="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:gravity="center"
-            android:textColor="#FF0000"
-            android:textSize="10sp" />
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/txt_Street_plot"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="Street/plot"
-            android:inputType="text"
-            android:maxLength="25"
-            android:textSize="22sp" />
-        <TextView
-            android:id="@+id/err_Label_plot"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="#FF0000"
-            android:textSize="10sp" />
+                <EditText
+                    android:id="@+id/txt_Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawablePadding="16dp"
+                    android:hint="Name"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textSize="14sp" />
 
-        <EditText
-            android:id="@+id/txt_Area"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="Area Details"
-            android:inputType="text"
-            android:maxLength="25"
-            android:textSize="22sp" />
+                <EditText
+                    android:id="@+id/txt_Street_plot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawablePadding="16dp"
+                    android:hint="Street/plot"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/err_Label_area"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="#FF0000"
-            android:textSize="10sp" />
+                <EditText
+                    android:id="@+id/txt_Area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawablePadding="16dp"
+                    android:hint="Area Details"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textSize="14sp" />
+                <EditText
+                    android:id="@+id/txt_Pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawablePadding="16dp"
+                    android:hint="PIN"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textSize="14sp" />
 
-        <EditText
-            android:id="@+id/txt_Pin"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="PIN"
-            android:inputType="number"
-            android:maxLength="6"
-            android:textSize="22sp" />
 
-        <TextView
-            android:id="@+id/err_Label_pin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="#FF0000"
-            android:textSize="10sp" />
+                <Button
+                    android:id="@+id/btn_Register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/button_bg"
+                    android:text="Register"
+                    android:textColor="@color/white" />
 
-        <Button
-            android:id="@+id/btn_Register"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_style"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:text="Register"
-            android:textColor="@android:color/white" />
+
+        </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>

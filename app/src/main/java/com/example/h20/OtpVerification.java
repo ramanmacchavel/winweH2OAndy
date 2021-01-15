@@ -8,11 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+
 public class OtpVerification extends AppCompatActivity {
 
     //Declaration
-    TextView Txt_Otp, Otp_Err_label;
-    Button Btn_OtpVerify;
+    private TextView Txt_Otp, Otp_Err_label;
+    private  Button Btn_OtpVerify;
+    private AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +33,8 @@ public class OtpVerification extends AppCompatActivity {
     private void openhomeActivity() {
         Txt_Otp = findViewById(R.id.txt_Otp);
         String TxtOtp = Txt_Otp.getText().toString();
-        Otp_Err_label = findViewById(R.id.otp_err_Label);
         try {
             if (TxtOtp.isEmpty()) {
-                Otp_Err_label.setText("Enter you otp");
             } else {
                 Intent openRegintent = new Intent(this, Registration.class);
                 startActivity(openRegintent);
