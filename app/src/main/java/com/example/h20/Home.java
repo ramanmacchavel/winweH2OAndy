@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -35,34 +35,39 @@ public class Home extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<Hero> hero;
-    Adapter adapter;
+    HomeAdapter adapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         //for recycler view
         recyclerView = findViewById(R.id.movielist);
         //for nav
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         nav=(NavigationView)findViewById(R.id.navmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.Open, R.string.Close );
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         callmovie();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.iconmenu, menu);
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
             {
-               // getMenuInflater().inflate(R.menu.iconmenu, (Menu) menuItem);
+                // getMenuInflater().inflate(R.menu.iconmenu, menuItem);
                 switch (menuItem.getItemId())
                 {
                     case R.id.menu_home :
-                         //Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_LONG).show();
                         recreate();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -98,7 +103,7 @@ public class Home extends AppCompatActivity {
                         break;
 
                     case R.id.menu_logout :
-                        //Toast.makeText(getApplicationContext(),"faq",Toast.LENGTH_LONG).show();
+                        // Toast.makeText(getApplicationContext(),"faq",Toast.LENGTH_LONG).show();
                         logoutapp();
                         //drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -108,6 +113,7 @@ public class Home extends AppCompatActivity {
                 return true;
             }
         });
+        return true;
     }
     @Override
     protected void onResume() {
@@ -165,7 +171,7 @@ public class Home extends AppCompatActivity {
                 public void onResponse(Call<List<Hero>> call, Response<List<Hero>> response) {
                     List<Hero> heroList = response.body();
                     recyclerView.setLayoutManager(new LinearLayoutManager(Home.this));
-                    adapter = new Adapter(Home.this, heroList);
+                    adapter = new HomeAdapter(Home.this, heroList);
                     recyclerView.setAdapter(adapter);
                 }
 
@@ -188,4 +194,5 @@ public class Home extends AppCompatActivity {
         openamainintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(openamainintent);
     }
+
 }

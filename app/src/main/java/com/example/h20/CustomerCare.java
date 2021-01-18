@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
@@ -29,10 +30,14 @@ public class CustomerCare extends AppCompatActivity {
 
         nav=(NavigationView)findViewById(R.id.navmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
-
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.Open, R.string.Close );
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.iconmenu, menu);
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
@@ -41,7 +46,7 @@ public class CustomerCare extends AppCompatActivity {
                 {
                     case R.id.menu_home :
                         //Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_LONG).show();
-                       openhome();
+                        openhome();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
@@ -65,7 +70,7 @@ public class CustomerCare extends AppCompatActivity {
 
                     case R.id.menu_customerservice :
                         // Toast.makeText(getApplicationContext(),"customer service",Toast.LENGTH_LONG).show();
-                       recreate();
+                        recreate();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
@@ -81,12 +86,10 @@ public class CustomerCare extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }
-
                 return true;
             }
         });
-
-
+        return true;
     }
     public void openhome(){
         try{

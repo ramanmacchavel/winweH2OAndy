@@ -4,17 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingTop="15dp"
+    android:layout_marginTop="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="1dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="10dp"
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,6 +63,16 @@
                 app:layout_constraintStart_toEndOf="@+id/coverImage"
                 app:layout_constraintTop_toBottomOf="@+id/movieTitle"
                 android:layout_marginLeft="16dp" />
+            <Button
+                android:id="@+id/btn_order"
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:background="@drawable/button_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movieArtist"
+                android:textColor="@color/white"
+                android:text="order"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

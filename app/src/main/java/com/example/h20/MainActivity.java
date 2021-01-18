@@ -1,6 +1,7 @@
 package com.example.h20;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -33,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //initializing awesomevalidation object
-        awesomeValidation = new AwesomeValidation(ValidationStyle.UNDERLABEL);
-        awesomeValidation.setContext(this);
+       awesomeValidation = new AwesomeValidation(ValidationStyle.UNDERLABEL);
+       awesomeValidation.setContext(this);
         //initializing view objects
         txt_mobile = (EditText) findViewById(R.id.txt_MobileNumber);
         buttonSubmit = (Button) findViewById(R.id.btn_Login);

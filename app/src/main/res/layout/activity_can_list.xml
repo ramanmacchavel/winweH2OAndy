@@ -7,8 +7,7 @@
     android:orientation="vertical"
     android:id="@+id/drawer"
     tools:openDrawer="start"
-    tools:context=".Home">
-
+    tools:context=".CanList">
 
     <LinearLayout
         android:id="@+id/top"
@@ -21,14 +20,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#37c6ff"
-            app:title="Product List"
+            app:title="Order"
             app:titleTextColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/movielist"
+            android:id="@+id/canlist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -37,8 +36,6 @@
         </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
-
-
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -46,7 +43,7 @@
         app:menu="@menu/iconmenu"
         app:headerLayout="@layout/navheader"
         android:layout_gravity="start"
-       android:theme="@style/AppTheme" />
+        android:theme="@style/AppTheme" />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CanList"></activity>
+        <activity android:name=".OrderActivity" />
         <activity android:name=".Faq" />
         <activity android:name=".CustomerCare" />
         <activity android:name=".MyOrder" />

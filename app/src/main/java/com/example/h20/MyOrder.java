@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
@@ -24,13 +25,16 @@ public class MyOrder extends AppCompatActivity {
         setContentView(R.layout.activity_my_order);
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         nav=(NavigationView)findViewById(R.id.navmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
-
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.Open, R.string.Close );
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.iconmenu, menu);
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
@@ -83,8 +87,7 @@ public class MyOrder extends AppCompatActivity {
                 return true;
             }
         });
-
-
+        return true;
     }
     public void openhome(){
         try{
