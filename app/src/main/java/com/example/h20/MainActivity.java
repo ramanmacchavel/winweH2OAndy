@@ -24,7 +24,7 @@ import static java.lang.String.*;
 public class MainActivity extends AppCompatActivity {
 
     //declaration here
-    private EditText txt_mobile;
+    private EditText txt_mobile , txt_email;
     private Button buttonSubmit;
     private AwesomeValidation awesomeValidation;
 
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
        awesomeValidation.setContext(this);
         //initializing view objects
         txt_mobile = (EditText) findViewById(R.id.txt_MobileNumber);
+        txt_email = (EditText) findViewById(R.id.txt_Email);
         buttonSubmit = (Button) findViewById(R.id.btn_Login);
         //adding validation to edittexts
         awesomeValidation.addValidation(this, R.id.txt_MobileNumber, "^[2-9]{2}[0-9]{8}$", R.string.MobileNumberError);

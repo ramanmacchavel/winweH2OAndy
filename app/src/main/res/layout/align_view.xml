@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -63,6 +64,22 @@
                 app:layout_constraintStart_toEndOf="@+id/coverImage"
                 app:layout_constraintTop_toBottomOf="@+id/movieTitle"
                 android:layout_marginLeft="16dp" />
+
+            <TextView
+                android:id="@+id/product_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Movie Artist"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/coverImage"
+                app:layout_constraintTop_toBottomOf="@+id/movieArtist"
+                android:layout_marginLeft="16dp"
+                android:visibility="invisible"/>
+
+
+
             <Button
                 android:id="@+id/btn_order"
                 android:layout_width="65dp"

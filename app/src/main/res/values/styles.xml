@@ -8,11 +8,12 @@
         <!--for menu icon and text-->
       <item name="android:colorForeground">@color/black</item>
         <!--for image viewcolor-->
-       <item name="tint">@color/skyblue</item>
     </style>
 
     <style name="MyAppTheme" parent="AppTheme">
         <item name="android:tint">@color/white</item>
+        <!--for image viewcolor-->
+        <item name="tint">@color/skyblue</item>
     </style>
 
 

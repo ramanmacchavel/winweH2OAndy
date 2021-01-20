@@ -39,6 +39,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
         holder.heroName.setText(hero.get(position).getRealname());
         holder.movieName.setText(hero.get(position).getName());
+       // holder.product_id.setText(hero.get(position).getBio());
         holder.order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +64,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             super(itemView);
             movieName = itemView.findViewById(R.id.movieTitle);
             heroName = itemView.findViewById(R.id.movieArtist);
+           // product_id = itemView.findViewById(R.id.product_id);
             order =  itemView.findViewById(R.id.btn_order);
         }
     }

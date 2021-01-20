@@ -13,8 +13,7 @@
 
   <item android:id="@+id/menu_mycart"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
-        android:title="My Cart"
-      app:showAsAction="always"/>
+        android:title="My Cart" />
 
   <item android:id="@+id/menu_myorder"
       android:icon="@drawable/ic_baseline_add_shopping_cart_24"
@@ -31,8 +30,6 @@
   <item android:id="@+id/menu_logout"
       android:icon="@drawable/ic_baseline_feedback_24"
      android:title="Logout" />
-
-
 
 </menu>
 

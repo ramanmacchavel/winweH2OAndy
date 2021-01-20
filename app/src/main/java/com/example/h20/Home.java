@@ -55,10 +55,9 @@ public class Home extends AppCompatActivity {
         callmovie();
     }
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu( Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.iconmenu, menu);
-
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
@@ -107,13 +106,11 @@ public class Home extends AppCompatActivity {
                         logoutapp();
                         //drawerLayout.closeDrawer(GravityCompat.START);
                         break;
-
-
                 }
                 return true;
             }
         });
-        return true;
+        return false;
     }
     @Override
     protected void onResume() {
@@ -173,6 +170,7 @@ public class Home extends AppCompatActivity {
                     recyclerView.setLayoutManager(new LinearLayoutManager(Home.this));
                     adapter = new HomeAdapter(Home.this, heroList);
                     recyclerView.setAdapter(adapter);
+
                 }
 
                 @Override

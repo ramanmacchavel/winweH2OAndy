@@ -99,6 +99,19 @@
             android:padding="16dp"
             android:textSize="14sp" />
 
+        <EditText
+            android:id="@+id/txt_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edittext_bg"
+            android:drawablePadding="16dp"
+            android:hint="E-Mail ID"
+            android:maxLength="10"
+            android:inputType="textEmailAddress"
+            android:padding="16dp"
+            android:textSize="14sp" />
+
 
         <Button
             android:id="@+id/btn_Login"

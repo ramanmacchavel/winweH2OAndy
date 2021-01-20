@@ -5,21 +5,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer"
-    tools:openDrawer="start"
+    tools:openDrawer=""
     tools:context=".MyAccount">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
+
+    <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#37c6ff"
             app:title="My Account"
             app:titleTextColor="@android:color/white" />
-    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/txt_MobileNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/txt_Street_plot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/txt_Area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/txt_Pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/btn_EditAddress"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/button_bg"
+                android:textColor="@color/white"
+                android:text="Edit Address"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Button
+                android:id="@+id/btn_AddAddress"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_bg"
+                android:textColor="@color/white"
+                android:text="Add Address"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -29,5 +91,6 @@
         app:headerLayout="@layout/navheader"
         android:layout_gravity="start"
        android:theme="@style/AppTheme"/>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
