@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -36,7 +37,7 @@ public class Home extends AppCompatActivity {
     RecyclerView recyclerView;
     List<Hero> hero;
     HomeAdapter adapter;
-
+    private ProgressBar pgsBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,7 +161,9 @@ public class Home extends AppCompatActivity {
     }
     private void callmovie() {
         if(!isNetworkConnected()) {
+
             Toast.makeText(Home.this, "No Internet", Toast.LENGTH_SHORT).show();
+            return;
         }else{
             Call<List<Hero>> call = RetrofitClass.getInstance().getMyApi().gethero();
             call.enqueue(new Callback<List<Hero>>() {

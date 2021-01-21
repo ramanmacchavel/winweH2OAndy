@@ -96,7 +96,7 @@ public class CanList extends AppCompatActivity {
                 return true;
             }
         });
-        return true;
+        return false;
     }
     public void openhome() {
         try{

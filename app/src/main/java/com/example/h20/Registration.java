@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
@@ -41,7 +43,7 @@ public class Registration extends AppCompatActivity {
         //adding validation to edittexts
         awesomeValidation.addValidation(this, R.id.txt_Name, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.NameError);
         awesomeValidation.addValidation(this, R.id.txt_Street_plot, "", R.string.PlotError);
-        awesomeValidation.addValidation(this, R.id.txt_Area, "", R.string.AreaError);
+        awesomeValidation.addValidation(this, R.id.txt_Area, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.AreaError);
         awesomeValidation.addValidation(this, R.id.txt_Pin, "", R.string.AreaError);
 
        Register.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +71,10 @@ public class Registration extends AppCompatActivity {
 
     }
     public void openHomeActivity(){
+        //for get device id
+        String ID = Settings.Secure.getString(getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+       // Toast.makeText(getApplicationContext(), ""+ ID.toString(),Toast.LENGTH_LONG).show();
         Intent openmainintent = new Intent(this, Home.class);
         openmainintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(openmainintent);
